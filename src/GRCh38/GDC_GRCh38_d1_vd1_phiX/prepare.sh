@@ -45,7 +45,7 @@ download_GDC_GRCh38_d1_vd1_phiX() {
 initialize
 
 primaryAssemblyName="GRCh38"
-referenceGenomeName="GRCh38_decoy_ebv_phiX"
+referenceGenomeName="GRCh38_d1_vd1_phiX"
 outputDir="$primaryAssemblyName/$referenceGenomeName"
 
 mkdir -p "$outputDir/$referenceGenomeName"

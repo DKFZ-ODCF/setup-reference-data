@@ -35,20 +35,20 @@ primaryAssemblyName="GRCh38"
 referenceGenomeName="GRCh38_decoy_ebv_phiX"
 outputDir="$primaryAssemblyName/$referenceGenomeName"
 
-#mkdir -p "$outputDir/$referenceGenomeName"
-#download_core_ref_GRCh38_hla_decoy_ebv_phiX "$outputDir/${referenceGenomeName}_alt_hla.fa" "$SCRIPT_DIR"
-#
-#cat "$outputDir/${referenceGenomeName}_alt_hla.fa" \
-#    | grepNonAltChromosomes \
-#    | removeChrPrefixes \
-#    > "$outputDir/$referenceGenomeName.fa"
-#rm "$outputDir/${referenceGenomeName}_alt_hla.fa"
-#
-#md5sum $(readlink -f "$outputDir/$referenceGenomeName.fa") \
-#    > "$SCRIPT_DIR/$referenceGenomeName.fa.md5"
-#
-#bwaIndex "$outputDir/$referenceGenomeName.fa" "$outputDir/bwa-$BWA_VERSION/$referenceGenomeName.fa"
-#fastaIndex "$outputDir/$referenceGenomeName.fa"
+mkdir -p "$outputDir/$referenceGenomeName"
+download_core_ref_GRCh38_hla_decoy_ebv_phiX "$outputDir/${referenceGenomeName}_alt_hla.fa" "$SCRIPT_DIR"
+
+cat "$outputDir/${referenceGenomeName}_alt_hla.fa" \
+    | grepNonAltChromosomes \
+    | removeChrPrefixes \
+    > "$outputDir/$referenceGenomeName.fa"
+rm "$outputDir/${referenceGenomeName}_alt_hla.fa"
+
+md5sum $(readlink -f "$outputDir/$referenceGenomeName.fa") \
+    > "$SCRIPT_DIR/$referenceGenomeName.fa.md5"
+
+bwaIndex "$outputDir/$referenceGenomeName.fa" "$outputDir/bwa-$BWA_VERSION/$referenceGenomeName.fa"
+fastaIndex "$outputDir/$referenceGenomeName.fa"
 statsFiles "$outputDir/$referenceGenomeName.fa" "$outputDir/stats" "grepRealChromosomes"
 
 cleanUp

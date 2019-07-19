@@ -31,16 +31,16 @@ primaryAssemblyName="GRCh38"
 referenceGenomeName="GRCh38_decoy_ebv_phiX_alt_hla"
 outputDir="$primaryAssemblyName/$referenceGenomeName"
 
-#mkdir -p "$outputDir"
-#download_core_ref_GRCh38_hla_decoy_ebv_phiX /dev/stdout "$SCRIPT_DIR" \
-#    | removeChrPrefixes \
-#    > "$outputDir/$referenceGenomeName.fa"
-#
-#md5sum $(readlink -f "$outputDir/$referenceGenomeName.fa") \
-#    > "$SCRIPT_DIR/$referenceGenomeName.fa.md5"
+mkdir -p "$outputDir"
+download_core_ref_GRCh38_hla_decoy_ebv_phiX /dev/stdout "$SCRIPT_DIR" \
+    | removeChrPrefixes \
+    > "$outputDir/$referenceGenomeName.fa"
 
-#bwaIndex "$outputDir/$referenceGenomeName.fa" "$outputDir/bwa-$BWA_VERSION/$referenceGenomeName.fa"
-#fastaIndex "$outputDir/$referenceGenomeName.fa"
+md5sum $(readlink -f "$outputDir/$referenceGenomeName.fa") \
+    > "$SCRIPT_DIR/$referenceGenomeName.fa.md5"
+
+bwaIndex "$outputDir/$referenceGenomeName.fa" "$outputDir/bwa-$BWA_VERSION/$referenceGenomeName.fa"
+ fastaIndex "$outputDir/$referenceGenomeName.fa"
 statsFiles "$outputDir/$referenceGenomeName.fa" "$outputDir/stats" "grepRealChromosomes"
 
 cleanUp
