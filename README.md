@@ -80,7 +80,7 @@ For newer setups of reference data the directory structure was change. For insta
 | ngs_share identifier | identifier | chromosomes  | description  |
 +--------+---------------+--------------+--------------+
 | - | GRCh38/GRCh38_decoy_ebv_phiX  | 1-22, X, Y, M, random, unplaced, phix | "chr" prefixes were dropped. |
-| - | GRCh38/GRCh38_decoy_ebv_phiX  | 1-22, X, Y, M, random, unplaced, alt, hla, phix | "chr" prefixes were dropped. |
+| - | GRCh38/GRCh38_decoy_ebv_phiX_alt_hla | 1-22, X, Y, M, random, unplaced, alt, hla, phix | "chr" prefixes were dropped. Without phix this is the same assembly as the one used ICGC-ARGO (checked via Picard NormalizeFasta and md5sum) and by the 1000 Genomes Project, BROAD and KidsFirst project at CHOPS ([according to personal communication by Junjun Zhang](https://object.cancercollaboratory.org:9080/swift/v1/genomics-public-data/reference-genome/GRCh38_hla_decoy_ebv/GRCh38_hla_decoy_ebv.fa). |
 | - | GRCh38/GDC_GRCh38_d1_vd1_phiX | 1-22, X, Y, M, random, unplaced, viruses, phix | see [here](https://gdc.cancer.gov/about-data/data-harmonization-and-generation/gdc-reference-files), phiX was added. "chr" prefixes were dropped. |
 +--------+---------------+--------------+--------------+  
 
@@ -101,6 +101,8 @@ First, install the Conda environment:
 conda env create -n setup-reference-data -f "$repoRoot/conda.yml"
 ```
 
-You can then install a specific assembly and associated reference data by calling the `prepare.sh` script in the directory. The currently maintained assemblies are in the directory named like the primary assembly (e.g. `GRCh38`) and a variant subdirectory (e.g. `GRCh38_decoy_ebv_phiX`).
+You can then install a specific assembly and associated reference data by calling the `prepare.sh` script in the corresponding directory in the repository. The currently maintained assemblies are in the directory named like the primary assembly (e.g. `GRCh38`) and a variant subdirectory (e.g. `GRCh38_decoy_ebv_phiX`).
+
+Note that the scripts try to reduce downloads by saving caching the downloaded files in a `cache/` directory, in particular if you want to build reference files for multiple related assemblies. Obviously, this directory is not automatically removed after running the scripts.
  
 The scripts for the legacy assemblies should be in the `src/legacy` directory as soon as they are written. Until then only general information or protocol information are put into these directories (if possible).

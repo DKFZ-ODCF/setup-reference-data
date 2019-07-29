@@ -93,8 +93,9 @@ bwaIndex() {
     local fastaFileName=$(basename "$fasta")
     mkdir -p "$indexDir"
     (
-        ln -sf "$absoluteFasta" "$indexDir"
-        pushd "$indexDir"
+        cd "$indexDir"
+        # This is a relative symlink to allow relocation of the whole reference's directory.
+        ln -sf "../"$(basename "$fasta") "."
         bwa index -p "$indexName" "$fastaFileName"
     )
 }
