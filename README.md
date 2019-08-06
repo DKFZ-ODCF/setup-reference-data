@@ -23,7 +23,7 @@ In general, there are a number of special FASTA entries in downloaded reference 
 ### Assembly Identifiers
 
 In general there is the following relation between human assemblies: 
-  * `hg19 + decoys = hs37d5 = 1KGRef`. We will refer to `hg19` as the human base assembly `hg19` without any decoys. If decoys are added,  we use either `hs37d5` or `1KGRef` but will prefer `hs37d5`.
+  * `hg19 | decoys = hs37d5 = 1KGRef`. We will refer to `hg19` as the human base assembly `hg19` without any decoys. If decoys are added,  we use either `hs37d5` or `1KGRef` but will prefer `hs37d5`.
   * `hg19 = GRCh37`
   * `hg38 = GRCh38`
  
@@ -38,28 +38,27 @@ The identifiers of assemblies used in the logging output and emails of OTP conta
 
 Unfortunately, no systematic naming format was used in the past. Therefore, the following table with general information about the assemblies can be helpful:
 
-+--------+---------------+--------------+--------------+
 | ngs_share identifier | identifier | chromosomes  | description  |
-+--------+---------------+--------------+--------------+
+|--------|---------------|--------------|--------------|
 | TBD            | bwa06_1KGRef | 1-22, X, Y, MT, GL*, NC_007605, hs37d5 | TBD |
 | TBD            | bwa06_1KGRef_PhiX | TBD | TBD |
 | TBD            | bwa06_hg19_chr | TBD | TBD |
 | TBD            | bwa06_methylCtools_hs37d5_PhiX_Lambda | TBD | TBD |
-+--------+---------------+--------------+--------------+
+|--------|---------------|--------------|--------------|
 | TBD            | bwa06_hg38 | 1-22, X, Y, MT, KI*, GL* | TBD |
 | legacy.hg_GRCh38      | bwa06_hg38_CGA_000001405.15-no_alt_analysis_set | **with** chr-prefix: 1-22, X, Y, MT, KI*, GL*, EBV | Originally created for the DEEP project by Barbara Hutter. |
 | TBD            | bwa07_hg38_PhiX | 1-22, X, Y, MT, KI*, GL*, phiX174 | TBD |
 | TBD            | legacy.hg_GRCh38 | 1-22, X, Y, MT, KI*, GL* | TBD |
 | TBD            | bwa06_methylCtools_hg38_PhiX_Lambda | TBD | TBD |
 | TBD            | bwa06_methylCtools_hg38_PhiX_Lambda_Benchmark | TBD | TBD |
-+----------------+-----------+--------------------------+-----+
+|----------------|-----------|--------------------------|-----|
 | TBD            | bwa06_hs37d5_Bovine_Phix | TBD | Why is _Bos taurus_ in here? |
-+----------------+-----------+--------------------------+-----+
+|----------------|-----------|--------------------------|-----|
 | TBD            | bwa06_hs37d5_GRCm38mm | TBD | For xenograft mapping. Only mouse chromosomes with chr-prefix. |
 | TBD            | bwa06_hs37d5_GRCm38mm_PhiX | TBD | For xenograft mapping. Only mouse chromosomes with chr-prefix. |
-| TBD            | bwa06_hg19_GRCh37+mm10 | TBD | For xenograft mapping. Only mouse chromosomes with chr-prefix. |
+| TBD            | bwa06_hg19_GRCh37|mm10 | TBD | For xenograft mapping. Only mouse chromosomes with chr-prefix. |
 | TBD            | bwa06_methylCtools_hs37d5_GRCm38mm10_PhiX_Lambda | TBD | For xenograft mapping. Only mouse chromosomes with chr-prefix. |
-+----------------+-----------+--------------------------+-----+
+|----------------|-----------|--------------------------|-----|
 | TBD            | bwa06_GRCm38mm10 | TBD | TBD |
 | TBD            | bwa06_GRCm38mm10_PhiX | TBD | TBD |
 | TBD            | bwa06_GRCm38mm10_PhiX_hD3A | TBD | TBD |
@@ -76,13 +75,11 @@ Currently, OTP assemblies are installed in `/icgc/dkfzlsdf/project/ODCF/referenc
 
 For newer setups of reference data the directory structure was change. For instance, index-directories now contain full version numbers, e.g. `bwa-0.7.15`. Furthermore, assemblies are grouped by their [primary assembly](https://www.ncbi.nlm.nih.gov/grc/help/definitions/) -- the actual chromosomes of the organism plus the unplaced and unlocalized sequences representing a non-redundant haploid genome.
 
-+--------+---------------+--------------+--------------+
 | ngs_share identifier | identifier | chromosomes  | description  |
-+--------+---------------+--------------+--------------+
+|--------|---------------|--------------|--------------|
 | - | GRCh38/GRCh38_decoy_ebv_phiX  | 1-22, X, Y, M, random, unplaced, phix | "chr" prefixes were dropped. |
 | - | GRCh38/GRCh38_decoy_ebv_phiX_alt_hla | 1-22, X, Y, M, random, unplaced, alt, hla, phix | "chr" prefixes were dropped. Without phix this is the same assembly as the one used ICGC-ARGO (checked via Picard NormalizeFasta and md5sum) and by the 1000 Genomes Project, BROAD and KidsFirst project at CHOPS ([according to personal communication by Junjun Zhang](https://object.cancercollaboratory.org:9080/swift/v1/genomics-public-data/reference-genome/GRCh38_hla_decoy_ebv/GRCh38_hla_decoy_ebv.fa). |
-| - | GRCh38/GDC_GRCh38_d1_vd1_phiX | 1-22, X, Y, M, random, unplaced, viruses, phix | see [here](https://gdc.cancer.gov/about-data/data-harmonization-and-generation/gdc-reference-files), phiX was added. "chr" prefixes were dropped. |
-+--------+---------------+--------------+--------------+  
+| - | GRCh38/GDC_GRCh38_d1_vd1_phiX | 1-22, X, Y, M, random, unplaced, viruses, phix | see [here](https://gdc.cancer.gov/about-data/data-harmonization-and-generation/gdc-reference-files), phiX was added. "chr" prefixes were dropped. | 
 
 ## What does it all mean?
 
