@@ -44,21 +44,21 @@ Unfortunately, no systematic naming format was used in the past. Therefore, the 
 | TBD            | bwa06_1KGRef_PhiX | TBD | TBD |
 | TBD            | bwa06_hg19_chr | TBD | TBD |
 | TBD            | bwa06_methylCtools_hs37d5_PhiX_Lambda | TBD | TBD |
-|--------|---------------|--------------|--------------|
+| | | | |
 | TBD            | bwa06_hg38 | 1-22, X, Y, MT, KI*, GL* | TBD |
 | legacy.hg_GRCh38      | bwa06_hg38_CGA_000001405.15-no_alt_analysis_set | **with** chr-prefix: 1-22, X, Y, MT, KI*, GL*, EBV | Originally created for the DEEP project by Barbara Hutter. |
 | TBD            | bwa07_hg38_PhiX | 1-22, X, Y, MT, KI*, GL*, phiX174 | TBD |
 | TBD            | legacy.hg_GRCh38 | 1-22, X, Y, MT, KI*, GL* | TBD |
 | TBD            | bwa06_methylCtools_hg38_PhiX_Lambda | TBD | TBD |
 | TBD            | bwa06_methylCtools_hg38_PhiX_Lambda_Benchmark | TBD | TBD |
-|----------------|-----------|--------------------------|-----|
+| | | | |
 | TBD            | bwa06_hs37d5_Bovine_Phix | TBD | Why is _Bos taurus_ in here? |
-|----------------|-----------|--------------------------|-----|
+| | | | |
 | TBD            | bwa06_hs37d5_GRCm38mm | TBD | For xenograft mapping. Only mouse chromosomes with chr-prefix. |
 | TBD            | bwa06_hs37d5_GRCm38mm_PhiX | TBD | For xenograft mapping. Only mouse chromosomes with chr-prefix. |
 | TBD            | bwa06_hg19_GRCh37|mm10 | TBD | For xenograft mapping. Only mouse chromosomes with chr-prefix. |
 | TBD            | bwa06_methylCtools_hs37d5_GRCm38mm10_PhiX_Lambda | TBD | For xenograft mapping. Only mouse chromosomes with chr-prefix. |
-|----------------|-----------|--------------------------|-----|
+| | | | |
 | TBD            | bwa06_GRCm38mm10 | TBD | TBD |
 | TBD            | bwa06_GRCm38mm10_PhiX | TBD | TBD |
 | TBD            | bwa06_GRCm38mm10_PhiX_hD3A | TBD | TBD |
